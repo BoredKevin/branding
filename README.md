@@ -1,157 +1,149 @@
-# BKVN // Tactical Brand Kit & Hardware System
+# boredkevin/branding
 
-Official dark stealth hardware design tokens, typography specimens, and accessible UI component system for **BoredKevin (`BKVN`)**.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![NPM Version](https://img.shields.io/badge/npm-%40boredkevin%2Fbranding-crimson.svg)](https://www.npmjs.com/package/@boredkevin/branding)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-boredkevin%2Fbranding-181717.svg?logo=github)](https://github.com/boredkevin/branding)
 
-Designed for high-contrast tactical dashboards, mission-critical audio telemetry interfaces, and precision CAD typography.
+`boredkevin/branding` is a package of dark-theme styles, colors, fonts, and React components for building clean, fast web apps.
 
 ---
 
-## ⚡ Quickstart
+## How it works
 
-### Installation & Development
+- **One place for all tokens**: Colors, spacing, and fonts are stored in `tokens.json`. This keeps the CSS and TypeScript types in sync.
+- **Works with any build setup**: Ready to use with modern bundlers (ESM and CommonJS) and comes with full TypeScript types and a plain CSS stylesheet.
+
+---
+
+## Quick start
+
+### Install the package
 
 ```bash
+# npm
+npm install @boredkevin/branding
+
+# pnpm
+pnpm add @boredkevin/branding
+
+# yarn
+yarn add @boredkevin/branding
+```
+
+### 1. Import the stylesheet
+
+Add the base stylesheet and token variables near the top of the application entry point (such as `main.tsx` or `App.tsx`):
+
+```tsx
+import '@boredkevin/branding/style.css';
+```
+
+### 2. Use the React components
+
+Components can be imported directly:
+
+```tsx
+import { ChamferFrame, Button, Badge } from '@boredkevin/branding';
+
+export function StatusCard() {
+  return (
+    <ChamferFrame cut="md">
+      <Badge variant="red" size="sm">ONLINE</Badge>
+      <h2>System Monitor</h2>
+      <p>All background workers running normally.</p>
+      <Button variant="primary" onClick={() => console.log('Action triggered')}>
+        Run Diagnostics
+      </Button>
+    </ChamferFrame>
+  );
+}
+```
+
+### 3. Access design tokens directly
+
+Raw token values (such as hex codes or font stacks) can be accessed programmatically in JavaScript or configuration files:
+
+```tsx
+import { BKVN_TOKENS } from '@boredkevin/branding';
+
+console.log(BKVN_TOKENS.colors.bg);          // #050507
+console.log(BKVN_TOKENS.colors.red);         // #d92626
+console.log(BKVN_TOKENS.typography.primary);  // Plus Jakarta Sans, sans-serif
+```
+
+
+---
+
+## What is inside
+
+### Colors
+
+The palette uses deep dark backgrounds with crisp text and red accents:
+
+| Token | Value | Use case |
+| :--- | :--- | :--- |
+| `--bkvn-bg` | `#050507` | Main page background |
+| `--bkvn-bg-alt` | `#0a0b0e` | Cards and panels |
+| `--bkvn-bg-elevated` | `#11131a` | Modals and popups |
+| `--bkvn-text-primary` | `#ffffff` | Headings and white text |
+| `--bkvn-text-secondary` | `#949ba8` | Paragraphs and body text |
+| `--bkvn-text-muted` | `#787f91` | Labels and small captions |
+| `--bkvn-red` | `#d92626` | Buttons and highlights |
+| `--bkvn-border` | `rgba(255, 255, 255, 0.08)` | Card borders |
+
+### Fonts
+
+- **Plus Jakarta Sans**: Body text and labels.
+- **JetBrains Mono**: Buttons, code blocks, and data numbers.
+- **Albatross & HS Luna Obscura**: Headers and logo marks.
+
+### Components
+
+- **ChamferFrame**: A box container with cut-corner angles.
+- **Button**: A button with different styles (`primary`, `secondary`, `ghost`) that can also work as a link (`as="a"`).
+- **Modal**: A popup dialog that closes with the Escape key or by clicking outside.
+- **Form inputs**: Checkboxes, radio buttons, switches, and sliders.
+- **Widgets**: Audio equalizer bars, number counters, and token viewers.
+
+---
+
+## Local Development
+
+To run the demo site on your own computer:
+
+```bash
+# Clone the repository
+git clone https://github.com/boredkevin/branding.git
+cd branding
+
 # Install dependencies
 npm install
 
-# Start local development server (port 3000)
+# Start the demo site on localhost:3000
 npm run dev
 
-# Run automated Vitest test suite
+# Run the test suite
 npm run test
 
-# Run Vitest in interactive watch mode
-npm run test:watch
-
-# Compile TypeScript and build production bundle
+# Build the package for publishing
 npm run build
-
-# Preview production build locally
-npm run preview
 ```
 
 ---
 
-## 📐 Architecture & Key Concepts
+## Testing
 
-```
-branding/
-├── public/
-│   ├── tokens.json            # Single source of truth for design tokens
-│   ├── albatross/             # Albatross signature cursive typography
-│   ├── hs_lunaobscura_v1.0/   # HS Luna Obscura headline display typography
-│   └── audio/                 # Audio assets for VOID.FM telemetry HUD
-├── src/
-│   ├── components/
-│   │   ├── common/            # ChamferFrame, Badge, CodePreview
-│   │   ├── controls/          # Button, Checkbox, ToggleSwitch, RangeSlider, FormControls
-│   │   │   └── RadioKit/      # StandardRadio, SegmentedControl, RadioCardGroup
-│   │   ├── feedback/          # Accessible Modal with focus trapping
-│   │   └── hud/               # AudioPlayer, TelemetryGauge, SpecPatch, TypeTester, TokensTable
-│   ├── hooks/                 # useAudioPlayer, useTelemetryCounter
-│   ├── showcase/              # Hero, AudioTelemetry, Typography, Controls, Tokens sections
-│   ├── styles/                # tokens.css, chamfer.css, global.css
-│   ├── tokens/                # tokens.ts (typed schema & CSS variable bindings)
-│   ├── test/                  # Vitest environment setup
-│   ├── App.tsx                # Interactive system showcase application
-│   └── index.ts               # Barrel export for library consumption
-├── tsconfig.json              # TypeScript strict configuration & module path aliases
-└── vite.config.ts             # Vite 6 configuration + Vitest runner
-```
-
----
-
-## 🎨 Typography Matrix
-
-| Category | Typeface | Target Usage |
-| :--- | :--- | :--- |
-| **Brand Signature** | `Albatross` | Primary brand mark and stylized monograms (`.brand-mark`) |
-| **Display / Headlines** | `HS Luna Obscura` | High-fashion editorial display headlines (`ss01` stylistic alternates) |
-| **Body & UI** | `Plus Jakarta Sans` | Body copy, documentation paragraphs, and UI labels |
-| **Technical / Actions** | `JetBrains Mono` | Action buttons, telemetry HUDs, CAD data tables, code previews |
-
----
-
-## 🛰️ Color Tokens & WCAG AA Contrast Compliance
-
-Design tokens are maintained in [public/tokens.json](file:///d:/coding/BoredKevin/branding/public/tokens.json) and mapped directly to CSS variables in [src/styles/tokens.css](file:///d:/coding/BoredKevin/branding/src/styles/tokens.css):
-
-| Variable | Value | Role | WCAG Contrast |
-| :--- | :---: | :--- | :---: |
-| `--bkvn-bg` | `#050507` | Obsidian Void (Deep Background) | — |
-| `--bkvn-bg-alt` | `#0a0b0e` | Tactical Slate (Surface) | — |
-| `--bkvn-bg-elevated` | `#11131a` | Elevated Container Fill | — |
-| `--bkvn-text-primary` | `#ffffff` | Primary Headings & Bold Text | 19.3 : 1 (AAA) |
-| `--bkvn-text-secondary`| `#949ba8` | Paragraphs & Secondary Labels | 7.6 : 1 (AAA) |
-| `--bkvn-text-muted` | `#787f91` | Metadata, Tags & Table Headers | **4.65 : 1 (AA)** |
-| `--bkvn-red` | `#d92626` | Tactical Crimson Accent | — |
-| `--bkvn-border` | `rgba(255,255,255,0.08)` | Subtle Edge Dividers | — |
-| `--bkvn-border-strong` | `rgba(255,255,255,0.2)` | Interactive Borders | — |
-
----
-
-## 🕹️ Component System & Features
-
-### 1. Dual-Layer Chamfer Geometry (`ChamferFrame`)
-Hardware corner cutouts implemented using pure CSS dual-layer `clip-path: polygon(...)` pseudo-elements with `isolation: isolate` to avoid z-index bleeding:
-- **`chamfer-2cut`**: 45° chamfers on top-right and bottom-left corners (`cut="sm" | "md" | "lg"`).
-- **`chamfer-patch`**: 45° chamfers on top-left and top-right corners for military-spec patch badges.
-
-```tsx
-import { ChamferFrame } from '@components/common/ChamferFrame';
-
-<ChamferFrame cut="md" borderColor="rgba(255,255,255,0.2)" bgColor="#0a0b0e">
-  <p>Tactical Surface Content</p>
-</ChamferFrame>
-```
-
-### 2. Polymorphic Strict `Button`
-Discriminated union enforcing anchor attributes (`href`, `download`) when `as="a"`, while defaulting to `type="button"` for button elements to prevent unintended form submissions:
-
-```tsx
-import { Button } from '@components/controls/Button';
-
-// Standard action button
-<Button variant="primary" onClick={handleSave}>Execute</Button>
-
-// Polymorphic link button
-<Button as="a" href="/albatross/Albatross.otf" download variant="secondary">
-  Download Specimen
-</Button>
-```
-
-### 3. Accessible Dialog (`Modal`)
-- Full keyboard focus trapping (`Tab` and `Shift+Tab`).
-- Automatic restore of keyboard focus to previous trigger on close.
-- Accessible ARIA roles (`role="dialog"`, `aria-modal="true"`, `aria-labelledby`).
-- `Escape` key dismissal and backdrop overlay click dismiss.
-- Automatic body scroll locking (`overflow: hidden`).
-
-### 4. Reduced Motion Support
-Every animated component and keyframe animation includes `@media (prefers-reduced-motion: reduce)` support:
-- Instant counter resolution in `useTelemetryCounter`
-- Static equalizer display in `AudioPlayer`
-- Global zero-duration animation & smooth-scroll override for vestibular safety
-
----
-
-## 🧪 Testing
-
-The test suite runs on [Vitest](https://vitest.dev/) with JSDOM and `@testing-library/react`.
+Tests run using Vitest and React Testing Library to make sure components render properly, handle clicks, and support keyboard navigation.
 
 ```bash
 npm run test
 ```
 
-Test coverage includes:
-- **`Button.test.tsx`**: Discriminated unions, variants, event handling, and disabled state.
-- **`Modal.test.tsx`**: Focus trapping, Escape key handling, backdrop dismissal, and body scroll locking.
-- **`Checkbox.test.tsx`**: Generated unique IDs via `useId()`, accessibility labels, and change events.
-- **`ChamferFrame.test.tsx`**: Geometric cuts, CSS variable overrides, and rendering.
-- **`Tokens.test.ts`**: Schema validation, WCAG AA muted color verification, and CSS variable mapping.
-
 ---
 
-## 📜 License
+## License
 
-Private & Confidential © 2026 BoredKevin (`BKVN`). All Rights Reserved.
+- **Code and Components**: MIT License. Free to use and learn from.
+- **Fonts**: Bundled under the SIL Open Font License 1.1.
+- **Brand Identity**: The "BoredKevin" name, logos, and brand marks are proprietary and remain reserved.
+
