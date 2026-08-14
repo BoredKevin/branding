@@ -40,7 +40,7 @@ export const ControlsSection: React.FC<ControlsSectionProps> = ({ onOpenModal })
           <span className="section-label">
             03. UI COMPONENTS <span className="accent-red">[HARDWARE KIT]</span>
           </span>
-          <h2>Interface Kit Controls</h2>
+          <h2>Interface Kit</h2>
           <p style={{ fontSize: '0.875rem', marginBottom: '1rem' }}>
             Tactical UI controls, inputs, indicators, badges, and modal dialogs proportioned for dark
             editorial sites.

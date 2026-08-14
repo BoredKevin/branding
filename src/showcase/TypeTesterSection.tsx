@@ -9,7 +9,7 @@ export const TypeTesterSection: React.FC = () => {
           <span className="section-label">
             02. LIVE PREVIEW <span className="accent-red">[TESTER]</span>
           </span>
-          <h2>Interactive Type Tester</h2>
+          <h2>Type Tester</h2>
           <p style={{ fontSize: '0.875rem' }}>
             Test custom string rendering in real-time across BKVN brand typefaces with tactical character
             metrics.

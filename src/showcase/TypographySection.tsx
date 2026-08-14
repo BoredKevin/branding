@@ -9,7 +9,7 @@ export const TypographySection: React.FC = () => {
           <span className="section-label">
             01. TYPOGRAPHY <span className="accent-red">[SPECIMENS]</span>
           </span>
-          <h2>Tactical Typefaces</h2>
+          <h2>Typefaces</h2>
           <p style={{ fontSize: '0.875rem' }}>
             The BKVN identity utilizes Albatross exclusively for title marks and brand sign-offs,
             paired with HS Luna Obscura for high-contrast headline structures with automatic Stylistic
@@ -44,7 +44,7 @@ export const TypographySection: React.FC = () => {
               className="brand-mark"
               style={{ fontSize: '2rem', color: '#ffffff', lineHeight: '1.2', marginBottom: '0.5rem' }}
             >
-              BKVN // BoredKevin
+              BKVN
             </div>
             <p style={{ fontSize: '0.8125rem', color: 'var(--bkvn-text-secondary)', margin: 0 }}>
               Primary brand mark font used for signatures, title headings, and official kit callouts.

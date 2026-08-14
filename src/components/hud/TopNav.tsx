@@ -12,7 +12,6 @@ export const TopNav: React.FC<TopNavProps> = ({ onVoidFmClick }) => {
           <a href="#" className="brand-mark" style={{ fontSize: '1.35rem', color: '#ffffff', textDecoration: 'none' }}>
             BKVN
           </a>
-          <span className="telemetry-tag">LUNAOBSCURA [FREE FONT]</span>
         </div>
 
         <div className="nav-telemetry-links">

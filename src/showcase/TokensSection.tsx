@@ -10,7 +10,7 @@ export const TokensSection: React.FC = () => {
           <span className="section-label">
             04. MANIFEST <span className="accent-red">[TOKENS JSON]</span>
           </span>
-          <h2>Hardware Specifications</h2>
+          <h2>Specifications</h2>
           <p style={{ fontSize: '0.875rem' }}>
             Color variables, font families, and layout tokens dynamically bound from tokens.json.
           </p>
