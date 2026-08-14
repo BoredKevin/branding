@@ -1,0 +1,120 @@
+.radio-segmented-group {
+  display: inline-flex;
+  position: relative;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 4px;
+  gap: 4px;
+  flex-wrap: wrap;
+  isolation: isolate;
+}
+
+.radio-segmented-group::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bkvn-border-strong);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+  z-index: -2;
+  transition: background var(--bkvn-transition);
+}
+
+.radio-segmented-group::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bkvn-bg-alt);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 9.45px) 0,
+    100% 9.45px,
+    100% 100%,
+    9.45px 100%,
+    0 calc(100% - 9.45px)
+  );
+  z-index: -1;
+  transition: background var(--bkvn-transition);
+}
+
+.radio-segmented-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.95rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--bkvn-text-muted);
+  cursor: pointer;
+  border-radius: 0;
+  user-select: none;
+  transition: color var(--bkvn-transition);
+  isolation: isolate;
+}
+
+.radio-segmented-item input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.radio-segmented-item:hover {
+  color: var(--bkvn-text-secondary);
+}
+
+.radio-segmented-item.active {
+  color: #ffffff;
+}
+
+.radio-segmented-item.active::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bkvn-border-strong);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 6px) 0,
+    100% 6px,
+    100% 100%,
+    6px 100%,
+    0 calc(100% - 6px)
+  );
+  z-index: -2;
+}
+
+.radio-segmented-item.active::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bkvn-bg-elevated);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 5.45px) 0,
+    100% 5.45px,
+    100% 100%,
+    5.45px 100%,
+    0 calc(100% - 5.45px)
+  );
+  z-index: -1;
+}
+
+.radio-segmented-item input[type="radio"]:focus-visible + span {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.radio-segmented-item.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

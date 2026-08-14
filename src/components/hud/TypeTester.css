@@ -1,0 +1,26 @@
+.type-tester-container {
+  width: 100%;
+}
+
+.type-tester-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.8125rem;
+}
+
+.type-tester-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--bkvn-text-muted);
+}
+
+.type-tester-output {
+  font-size: 1.85rem;
+  line-height: 1.3;
+  color: #ffffff;
+  padding: 1.5rem;
+  min-height: 100px;
+  word-break: break-word;
+}

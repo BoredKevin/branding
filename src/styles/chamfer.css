@@ -1,0 +1,78 @@
+/* ==========================================================================
+   BKVN // HARDWARE CHAMFER & GEOMETRY UTILITIES
+   ========================================================================== */
+
+/* 2-Cut Asymmetrical Chamfer Frame (Top-Right & Bottom-Left) */
+.chamfer-2cut {
+  position: relative;
+  background: transparent;
+  border: none;
+  isolation: isolate;
+}
+
+.chamfer-2cut::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--chamfer-border, var(--bkvn-border-strong));
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--chamfer-cut, 12px)) 0,
+    100% var(--chamfer-cut, 12px),
+    100% 100%,
+    var(--chamfer-cut, 12px) 100%,
+    0 calc(100% - var(--chamfer-cut, 12px))
+  );
+  z-index: -2;
+  transition: background var(--bkvn-transition), box-shadow var(--bkvn-transition);
+}
+
+.chamfer-2cut::after {
+  content: '';
+  position: absolute;
+  inset: var(--chamfer-border-width, 1px);
+  background: var(--chamfer-bg, var(--bkvn-bg-alt));
+  clip-path: polygon(
+    0 0,
+    calc(100% - calc(var(--chamfer-cut, 12px) - 0.55px)) 0,
+    100% calc(var(--chamfer-cut, 12px) - 0.55px),
+    100% 100%,
+    calc(var(--chamfer-cut, 12px) - 0.55px) 100%,
+    0 calc(100% - calc(var(--chamfer-cut, 12px) - 0.55px))
+  );
+  z-index: -1;
+  transition: background var(--bkvn-transition);
+}
+
+/* Modifiers for Cut Sizes */
+.chamfer-cut-sm { --chamfer-cut: 8px; }
+.chamfer-cut-md { --chamfer-cut: 12px; }
+.chamfer-cut-lg { --chamfer-cut: 14px; }
+
+/* Inverted Chamfer (Top-Left & Bottom-Right) for Spec Patches */
+.chamfer-patch {
+  position: relative;
+  background: transparent;
+  border: none;
+  isolation: isolate;
+}
+
+.chamfer-patch::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--chamfer-border, var(--bkvn-border-strong));
+  clip-path: polygon(0 12px, 12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+  z-index: -2;
+  transition: background var(--bkvn-transition);
+}
+
+.chamfer-patch::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--chamfer-bg, var(--bkvn-bg-alt));
+  clip-path: polygon(0 11.45px, 11.45px 0, 100% 0, 100% calc(100% - 11.45px), calc(100% - 11.45px) 100%, 0 100%);
+  z-index: -1;
+  transition: background var(--bkvn-transition);
+}

@@ -1,0 +1,56 @@
+/* ==========================================================================
+   BKVN // DESIGN SYSTEM TOKENS & FONTS
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Albatross';
+  src: url('/albatross/Albatross.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HS Luna Obscura';
+  src: url('/hs_lunaobscura_v1.0/HS_LunaObscura.woff2') format('woff2'),
+       url('/hs_lunaobscura_v1.0/HS_LunaObscura.otf') format('opentype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Color Tokens */
+  --bkvn-bg: #050507;
+  --bkvn-bg-alt: #0a0b0e;
+  --bkvn-bg-elevated: #11131a;
+
+  --bkvn-text-primary: #ffffff;
+  --bkvn-text-secondary: #949ba8;
+  --bkvn-text-muted: #787f91;
+
+  --bkvn-red: #d92626;
+  --bkvn-red-subtle: rgba(217, 38, 38, 0.12);
+  --bkvn-red-border: rgba(217, 38, 38, 0.35);
+
+  --bkvn-border: rgba(255, 255, 255, 0.08);
+  --bkvn-border-strong: rgba(255, 255, 255, 0.2);
+
+  /* Typography Stack */
+  --font-brand: 'Albatross', cursive, display;
+  --font-display: 'HS Luna Obscura', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Font Scale */
+  --font-size-xs: 0.72rem;     /* 11.5px */
+  --font-size-sm: 0.8125rem;   /* 13px */
+  --font-size-base: 0.9375rem; /* 15px */
+  --font-size-lg: 1.0625rem;   /* 17px */
+  --font-size-xl: 1.25rem;     /* 20px */
+  --font-size-2xl: 1.625rem;   /* 26px */
+  --font-size-3xl: 2.25rem;    /* 36px */
+
+  --bkvn-radius: 2px;
+  --bkvn-transition: 0.15s ease;
+}

@@ -1,0 +1,42 @@
+.code-preview-container {
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.code-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 0.85rem;
+  background: var(--bkvn-bg-elevated);
+  border-bottom: 1px solid var(--bkvn-border);
+}
+
+.code-preview-tabs {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.code-tab-btn {
+  height: 28px !important;
+  padding: 0 0.75rem !important;
+  font-size: 0.72rem !important;
+}
+
+.code-copy-btn {
+  height: 28px !important;
+  padding: 0 0.75rem !important;
+  font-size: 0.72rem !important;
+}
+
+.code-preview-block {
+  padding: 1rem 1.15rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #e2e4e8;
+  overflow-x: auto;
+  line-height: 1.5;
+  margin: 0;
+  background: var(--bkvn-bg-alt);
+}

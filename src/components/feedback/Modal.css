@@ -1,0 +1,83 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 5, 7, 0.88);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--bkvn-transition);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box {
+  width: 100%;
+  max-width: 520px;
+  padding: 1.65rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--bkvn-border-strong);
+  padding-bottom: 0.75rem;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: #ffffff;
+}
+
+.modal-close-btn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bkvn-bg-elevated);
+  border: 1px solid var(--bkvn-border-strong);
+  color: var(--bkvn-text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: var(--bkvn-radius);
+  transition: color var(--bkvn-transition), border-color var(--bkvn-transition), background-color var(--bkvn-transition);
+}
+
+.modal-close-btn:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+  background: #1c202d;
+}
+
+.modal-close-btn:focus-visible {
+  outline: 2px solid var(--bkvn-red);
+  outline-offset: 2px;
+}
+
+.modal-body {
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+  color: var(--bkvn-text-secondary);
+  line-height: 1.6;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  align-items: center;
+  border-top: 1px solid var(--bkvn-border);
+  padding-top: 1rem;
+}

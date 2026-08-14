@@ -1,0 +1,54 @@
+.telemetry-gauge-card {
+  padding: 1.5rem;
+}
+
+.telemetry-card-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--bkvn-red);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.85rem;
+  display: block;
+}
+
+.telemetry-gauge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.telemetry-sublabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--bkvn-text-muted);
+}
+
+.digit-73 {
+  font-family: var(--font-mono);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0.25rem 0 0.75rem 0;
+  display: flex;
+  align-items: baseline;
+}
+
+.digit-73 .percent-symbol {
+  font-size: 1.75rem;
+  color: var(--bkvn-red);
+  margin-left: 0.25rem;
+  font-weight: 600;
+}
+
+.console-terminal {
+  padding: 0.85rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--bkvn-text-secondary);
+  line-height: 1.5;
+  --chamfer-bg: var(--bkvn-bg);
+  --chamfer-border: var(--bkvn-border);
+}

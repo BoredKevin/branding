@@ -1,0 +1,44 @@
+.spec-patch {
+  padding: 1.25rem 1.15rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--bkvn-text-primary);
+}
+
+.spec-patch h4 {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--bkvn-red);
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid var(--bkvn-border);
+  padding-bottom: 0.25rem;
+}
+
+.spec-patch ul {
+  list-style: none;
+  margin-bottom: 0.75rem;
+}
+
+.spec-patch li {
+  color: var(--bkvn-text-secondary);
+  margin-bottom: 0.15rem;
+}
+
+.spec-patch-footer {
+  font-size: 0.65rem;
+  color: var(--bkvn-text-muted);
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+}
+
+.spec-patch-mark {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--bkvn-text-muted);
+}

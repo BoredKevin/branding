@@ -1,0 +1,247 @@
+/* ==========================================================================
+   BKVN // HARDWARE FORM CONTROLS, CHAMFERED FRAMES & CUSTOM SELECT
+   ========================================================================== */
+
+.bkvn-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--bkvn-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+/* 1. Asymmetrical Chamfer Frames for Input, Select, Textarea */
+.bkvn-input-frame,
+.bkvn-select-frame,
+.bkvn-textarea-frame {
+  position: relative;
+  width: 100%;
+  --input-cut: 8px;
+  --input-border: var(--bkvn-border-strong);
+  --input-bg: var(--bkvn-bg-elevated);
+  isolation: isolate;
+  background: transparent;
+  display: flex;
+  cursor: text;
+  transition: --input-border var(--bkvn-transition);
+}
+
+.bkvn-select-frame {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Outer stroke layer */
+.bkvn-input-frame::before,
+.bkvn-select-frame::before,
+.bkvn-textarea-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--input-border);
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--input-cut)) 0,
+    100% var(--input-cut),
+    100% 100%,
+    var(--input-cut) 100%,
+    0 calc(100% - var(--input-cut))
+  );
+  z-index: -2;
+  transition: background var(--bkvn-transition), box-shadow var(--bkvn-transition);
+}
+
+/* Inner surface fill */
+.bkvn-input-frame::after,
+.bkvn-select-frame::after,
+.bkvn-textarea-frame::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--input-bg);
+  clip-path: polygon(
+    0 0,
+    calc(100% - calc(var(--input-cut) - 0.55px)) 0,
+    100% calc(var(--input-cut) - 0.55px),
+    100% 100%,
+    calc(var(--input-cut) - 0.55px) 100%,
+    0 calc(100% - calc(var(--input-cut) - 0.55px))
+  );
+  z-index: -1;
+  transition: background var(--bkvn-transition);
+}
+
+/* Active / Focus State */
+.bkvn-input-frame:focus-within::before,
+.bkvn-select-frame:focus-visible::before,
+.bkvn-select-frame.active-open::before,
+.bkvn-textarea-frame:focus-within::before {
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.bkvn-input-frame:hover:not(:focus-within)::before,
+.bkvn-select-frame:hover:not(.active-open)::before,
+.bkvn-textarea-frame:hover:not(:focus-within)::before {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* 2. Control Element Normalization */
+.bkvn-input,
+.bkvn-textarea {
+  width: 100%;
+  padding: 0.65rem 0.95rem;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  color: var(--bkvn-text-primary);
+  background: transparent;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.bkvn-input::placeholder,
+.bkvn-textarea::placeholder {
+  color: var(--bkvn-text-muted);
+}
+
+.bkvn-textarea {
+  resize: vertical;
+  min-height: 75px;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   3. THEMED CUSTOM SELECT COMPONENT
+   -------------------------------------------------------------------------- */
+.bkvn-custom-select-container {
+  position: relative;
+  width: 100%;
+}
+
+.bkvn-custom-select-container.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.bkvn-select-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.65rem 0.95rem;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  color: var(--bkvn-text-primary);
+  box-sizing: border-box;
+}
+
+.bkvn-select-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.bkvn-select-chevron {
+  font-size: 0.65rem;
+  color: var(--bkvn-text-muted);
+  transition: transform var(--bkvn-transition), color var(--bkvn-transition);
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+.bkvn-select-chevron.open {
+  transform: rotate(180deg);
+  color: #ffffff;
+}
+
+/* Custom Dropdown Menu Overlay */
+.bkvn-dropdown-menu {
+  position: absolute !important;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 500;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.95), 0 0 1px rgba(255, 255, 255, 0.25);
+  padding: 0.35rem 0;
+  --chamfer-bg: var(--bkvn-bg-elevated);
+  --chamfer-border: var(--bkvn-border-strong);
+}
+
+.bkvn-dropdown-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.bkvn-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 0.95rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: var(--bkvn-text-secondary);
+  cursor: pointer;
+  transition: background var(--bkvn-transition), color var(--bkvn-transition);
+  user-select: none;
+  position: relative;
+}
+
+.bkvn-dropdown-item-indicator {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--bkvn-text-muted);
+  transition: background var(--bkvn-transition), transform var(--bkvn-transition);
+  flex-shrink: 0;
+}
+
+.bkvn-dropdown-item-label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bkvn-dropdown-item-check {
+  font-size: 0.75rem;
+  color: var(--bkvn-red);
+  font-weight: 700;
+}
+
+/* Hover item */
+.bkvn-dropdown-item:hover {
+  background: #1c202d;
+  color: #ffffff;
+}
+
+.bkvn-dropdown-item:hover .bkvn-dropdown-item-indicator {
+  background: #ffffff;
+  transform: scale(1.4);
+}
+
+/* Selected item */
+.bkvn-dropdown-item.selected {
+  background: var(--bkvn-red-subtle);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.bkvn-dropdown-item.selected .bkvn-dropdown-item-indicator {
+  background: var(--bkvn-red);
+  box-shadow: 0 0 6px rgba(217, 38, 38, 0.8);
+  transform: scale(1.5);
+}
+
+.bkvn-dropdown-item.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}

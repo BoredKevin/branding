@@ -1,0 +1,1433 @@
+/* ==========================================================================
+   BKVN // BOREDKEVIN HARDWARE & EDITORIAL BRAND SYSTEM
+   Version: 5.1.0
+   Description: Refined monochrome & stealth dark editorial identity.
+                Clean, precise, zero-glow aesthetics with cut-corner tactical controls.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. FONT DEFINITIONS & BRAND TOKENS
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Albatross';
+  src: url('albatross/Albatross.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HS Luna Obscura';
+  src: url('hs_lunaobscura_v1.0/HS_LunaObscura.woff2') format('woff2'),
+    url('hs_lunaobscura_v1.0/HS_LunaObscura.otf') format('opentype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Clean Dark Color Palette */
+  --bkvn-bg: #050507;
+  /* Pure dark obsidian background */
+  --bkvn-bg-alt: #0a0b0e;
+  /* Subtle section surface */
+  --bkvn-bg-elevated: #11131a;
+  /* Container fill */
+
+  --bkvn-text-primary: #ffffff;
+  /* Primary stark white text */
+  --bkvn-text-secondary: #949ba8;
+  /* Secondary silver text */
+  --bkvn-text-muted: #525866;
+  /* Muted metadata */
+
+  --bkvn-red: #d92626;
+  /* Refined subtle crimson red accent */
+  --bkvn-red-subtle: rgba(217, 38, 38, 0.12);
+  --bkvn-red-border: rgba(217, 38, 38, 0.35);
+
+  --bkvn-border: rgba(255, 255, 255, 0.08);
+  --bkvn-border-strong: rgba(255, 255, 255, 0.2);
+
+  /* Typography Stack */
+  --font-brand: 'Albatross', cursive, display;
+  --font-display: 'HS Luna Obscura', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Font Scale */
+  --font-size-xs: 0.72rem;
+  /* 11.5px */
+  --font-size-sm: 0.8125rem;
+  /* 13px */
+  --font-size-base: 0.9375rem;
+  /* 15px */
+  --font-size-lg: 1.0625rem;
+  /* 17px */
+  --font-size-xl: 1.25rem;
+  /* 20px */
+  --font-size-2xl: 1.625rem;
+  /* 26px */
+  --font-size-3xl: 2.25rem;
+  /* 36px */
+
+  --bkvn-radius: 2px;
+  --bkvn-transition: 0.15s ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. GLOBAL RESETS & CLEAN BASE LAYOUT (NO Scanlines, NO Bright Gradients)
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--bkvn-text-primary);
+  background-color: var(--bkvn-bg);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
+   3. TOP TELEMETRY NAV BAR
+   -------------------------------------------------------------------------- */
+.top-telemetry-bar {
+  background: var(--bkvn-bg-alt);
+  border-bottom: 1px solid var(--bkvn-border);
+  padding: 0.65rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-telemetry-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.telemetry-tag {
+  color: var(--bkvn-red);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.nav-telemetry-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-telemetry-links a {
+  color: var(--bkvn-text-secondary);
+  text-decoration: none;
+  transition: color var(--bkvn-transition);
+}
+
+.nav-telemetry-links a:hover {
+  color: #ffffff;
+}
+
+.void-fm-pill {
+  border: 1px solid var(--bkvn-border-strong);
+  padding: 0.2rem 0.6rem;
+  background: var(--bkvn-bg-elevated);
+  color: var(--bkvn-text-primary) !important;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 2px;
+}
+
+.void-fm-pill:hover {
+  border-color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   4. TYPOGRAPHY & BRAND MARKS
+   -------------------------------------------------------------------------- */
+.brand-mark {
+  font-family: var(--font-brand);
+  font-size: 0.88em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: inherit;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-display,
+.u-display,
+[style*="font-display"] {
+  font-family: var(--font-display);
+  font-feature-settings: "ss01" 1, "ss01";
+  font-variant-alternates: stylistic(ss01);
+  color: var(--bkvn-text-primary);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: 0.875rem;
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--bkvn-text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+p.lead {
+  font-size: var(--font-size-lg);
+  color: var(--bkvn-text-primary);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--bkvn-text-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--bkvn-border-strong);
+  transition: color var(--bkvn-transition), text-decoration-color var(--bkvn-transition);
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--bkvn-text-muted);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.accent-red,
+.tag-red {
+  color: var(--bkvn-red);
+}
+
+.kit-badge-large {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  border-left: 3px solid var(--bkvn-red);
+  padding-left: 0.85rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   5. MATTE DARK SPECIFICATION PATCH (Clean Black Hardware Box)
+   -------------------------------------------------------------------------- */
+.spec-patch {
+  background: transparent;
+  color: var(--bkvn-text-primary);
+  padding: 1.25rem 1.15rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  position: relative;
+  border: none;
+  z-index: 1;
+}
+
+.spec-patch::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bkvn-border-strong);
+  clip-path: polygon(0 12px, 12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+  z-index: -2;
+}
+
+.spec-patch::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bkvn-bg-alt);
+  clip-path: polygon(0 11.45px, 11.45px 0, 100% 0, 100% calc(100% - 11.45px), calc(100% - 11.45px) 100%, 0 100%);
+  z-index: -1;
+}
+
+.spec-patch-mark {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--bkvn-text-muted);
+}
+
+
+.spec-patch h4 {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--bkvn-red);
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid var(--bkvn-border);
+  padding-bottom: 0.25rem;
+}
+
+.spec-patch ul {
+  list-style: none;
+  margin-bottom: 0.75rem;
+}
+
+.spec-patch li {
+  color: var(--bkvn-text-secondary);
+  margin-bottom: 0.15rem;
+}
+
+/* Clean Line Divider */
+.line-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--bkvn-border);
+  margin: 2rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. UNIFIED BUTTON SYSTEM (SCI-FI HARDWARE CONTROLS)
+   -------------------------------------------------------------------------- */
+.btn {
+  /* Box & Display Normalization */
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  vertical-align: middle;
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+
+  /* Strict Unison Dimensions (Standard baseline: 38px height) */
+  height: 38px;
+  padding: 0 1.25rem;
+  --btn-cut: 8px;
+
+  /* Typography Structure */
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+
+  /* Sci-Fi Asymmetrical Geometry (Top-Right & Bottom-Left Angled Cut Edges) */
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--btn-cut)) 0,
+    100% var(--btn-cut),
+    100% 100%,
+    var(--btn-cut) 100%,
+    0 calc(100% - var(--btn-cut))
+  );
+
+  /* Color Custom Property Defaults (Secondary / Slate surface default) */
+  --btn-bg: var(--bkvn-bg-elevated);
+  --btn-border: var(--bkvn-border-strong);
+  --btn-text: var(--bkvn-text-primary);
+
+  background-color: var(--btn-border);
+  color: var(--btn-text);
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  isolation: isolate;
+  transition: background-color var(--bkvn-transition),
+              color var(--bkvn-transition),
+              transform var(--bkvn-transition),
+              filter var(--bkvn-transition);
+}
+
+/* Inner Background Surface Layer for 1px Sci-Fi Chamfer Frame */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background-color: var(--btn-bg);
+  clip-path: polygon(
+    0 0,
+    calc(100% - calc(var(--btn-cut) - 0.55px)) 0,
+    100% calc(var(--btn-cut) - 0.55px),
+    100% 100%,
+    calc(var(--btn-cut) - 0.55px) 100%,
+    0 calc(100% - calc(var(--btn-cut) - 0.55px))
+  );
+  z-index: -1;
+  transition: background-color var(--bkvn-transition);
+}
+
+/* Base Hover & Active Micro-Interactions */
+.btn:hover {
+  --btn-bg: #1c202d;
+  --btn-border: rgba(255, 255, 255, 0.4);
+  --btn-text: #ffffff;
+  text-decoration: none;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.15));
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--bkvn-red);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   COLOR-ONLY VARIANT OVERRIDES (ZERO layout / size / geometry changes)
+   -------------------------------------------------------------------------- */
+
+/* Primary Variant: High-contrast stark white fill */
+.btn-primary {
+  --btn-bg: #ffffff;
+  --btn-border: #ffffff;
+  --btn-text: #050507;
+}
+
+.btn-primary:hover {
+  --btn-bg: #e2e4e8;
+  --btn-border: #e2e4e8;
+  --btn-text: #050507;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.btn-primary:active {
+  --btn-bg: #cbd0d8;
+  --btn-border: #cbd0d8;
+}
+
+/* Secondary Variant: Dark slate hardware surface */
+.btn-secondary {
+  --btn-bg: var(--bkvn-bg-elevated);
+  --btn-border: var(--bkvn-border-strong);
+  --btn-text: var(--bkvn-text-primary);
+}
+
+.btn-secondary:hover {
+  --btn-bg: #1c202d;
+  --btn-border: rgba(255, 255, 255, 0.4);
+  --btn-text: #ffffff;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.15));
+}
+
+.btn-secondary:active {
+  --btn-bg: #141722;
+  --btn-border: rgba(255, 255, 255, 0.5);
+}
+
+/* Danger Variant: Crimson red hardware tint */
+.btn-danger {
+  --btn-bg: var(--bkvn-red-subtle);
+  --btn-border: var(--bkvn-red-border);
+  --btn-text: var(--bkvn-red);
+}
+
+.btn-danger:hover {
+  --btn-bg: var(--bkvn-red);
+  --btn-border: var(--bkvn-red);
+  --btn-text: #ffffff;
+  filter: drop-shadow(0 0 8px rgba(217, 38, 38, 0.4));
+}
+
+.btn-danger:active {
+  --btn-bg: #b81d1d;
+  --btn-border: #b81d1d;
+  --btn-text: #ffffff;
+}
+
+/* Ghost Variant: Transparent tactical fill */
+.btn-ghost {
+  --btn-bg: transparent;
+  --btn-border: var(--bkvn-border);
+  --btn-text: var(--bkvn-text-secondary);
+}
+
+.btn-ghost:hover {
+  --btn-bg: var(--bkvn-bg-elevated);
+  --btn-border: var(--bkvn-border-strong);
+  --btn-text: #ffffff;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.12));
+}
+
+.btn-ghost:active {
+  --btn-bg: #1c202d;
+}
+
+/* --------------------------------------------------------------------------
+   UNIFORM SIZE MODIFIERS (Applied equally across all variants)
+   -------------------------------------------------------------------------- */
+
+/* Small Button Scale (30px height, 6px sci-fi corner cuts) */
+.btn-sm {
+  height: 30px;
+  padding: 0 0.85rem;
+  font-size: var(--font-size-xs);
+  --btn-cut: 6px;
+}
+
+/* Large Button Scale (46px height, 10px sci-fi corner cuts) */
+.btn-lg {
+  height: 46px;
+  padding: 0 1.65rem;
+  font-size: var(--font-size-base);
+  --btn-cut: 10px;
+}
+/* --------------------------------------------------------------------------
+   7. EDITORIAL BLOCKS
+   -------------------------------------------------------------------------- */
+.content-block {
+  padding: 2.75rem 0;
+  border-bottom: 1px solid var(--bkvn-border);
+  position: relative;
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2.75rem;
+}
+
+@media (max-width: 768px) {
+  .editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. INTERFACE KIT CONTROLS & TELEMETRY GAUGE (73% Initialization)
+   -------------------------------------------------------------------------- */
+.telemetry-gauge-card {
+  background: transparent;
+  padding: 1.5rem;
+  position: relative;
+  border: none;
+  isolation: isolate;
+}
+
+.telemetry-gauge-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bkvn-border-strong);
+  clip-path: polygon(0 14px, 14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+  z-index: -2;
+}
+
+.telemetry-gauge-card::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bkvn-bg-alt);
+  clip-path: polygon(0 13.45px, 13.45px 0, 100% 0, 100% calc(100% - 13.45px), calc(100% - 13.45px) 100%, 0 100%);
+  z-index: -1;
+}
+
+.console-terminal {
+  background: transparent;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--bkvn-text-secondary);
+  line-height: 1.5;
+  position: relative;
+  border: none;
+  isolation: isolate;
+}
+
+.console-terminal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bkvn-border);
+  clip-path: polygon(0 8px, 8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+  z-index: -2;
+}
+
+.console-terminal::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bkvn-bg);
+  clip-path: polygon(0 7.45px, 7.45px 0, 100% 0, 100% calc(100% - 7.45px), calc(100% - 7.45px) 100%, 0 100%);
+  z-index: -1;
+}
+
+.label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--bkvn-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  color: var(--bkvn-text-primary);
+  background: var(--bkvn-bg-elevated);
+  border: 1px solid var(--bkvn-border-strong);
+  border-radius: var(--bkvn-radius);
+  outline: none;
+  transition: border-color var(--bkvn-transition);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: #ffffff;
+}
+
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23949ba8' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2.25rem;
+}
+
+/* Toggle Switch */
+.toggle-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.toggle-wrapper input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 38px;
+  height: 20px;
+  background: var(--bkvn-bg-elevated);
+  border: 1px solid var(--bkvn-border-strong);
+  border-radius: 999px;
+  transition: background var(--bkvn-transition), border-color var(--bkvn-transition);
+  flex-shrink: 0;
+}
+
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  background: var(--bkvn-text-secondary);
+  border-radius: 50%;
+  transition: transform var(--bkvn-transition), background var(--bkvn-transition);
+}
+
+input[type="checkbox"]:checked+.toggle-switch {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+}
+
+input[type="checkbox"]:checked+.toggle-switch::after {
+  transform: translateX(18px);
+  background: #ffffff;
+}
+
+.toggle-wrapper input[type="checkbox"]:focus-visible+.toggle-switch {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Standard Custom Checkbox Control */
+input[type="checkbox"]:not(.toggle-wrapper input) {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: var(--bkvn-bg-elevated);
+  border: 1px solid var(--bkvn-border-strong);
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  transition: background var(--bkvn-transition), border-color var(--bkvn-transition);
+}
+
+input[type="checkbox"]:not(.toggle-wrapper input):checked {
+  background: var(--bkvn-red);
+  border-color: var(--bkvn-red);
+}
+
+input[type="checkbox"]:not(.toggle-wrapper input):checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+input[type="checkbox"]:not(.toggle-wrapper input):focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   RADIO BUTTON UI KIT
+   ========================================================================== */
+
+/* 1. Custom Standard Radio Control */
+.radio-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  font-size: 0.875rem;
+  color: var(--bkvn-text-primary);
+  transition: color var(--bkvn-transition);
+}
+
+.radio-wrapper:hover {
+  color: #ffffff;
+}
+
+.radio-wrapper input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.radio-button {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  background: var(--bkvn-bg-elevated);
+  border: 1px solid var(--bkvn-border-strong);
+  border-radius: 50%;
+  transition: background var(--bkvn-transition), border-color var(--bkvn-transition), box-shadow var(--bkvn-transition);
+  flex-shrink: 0;
+}
+
+.radio-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--bkvn-red);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform var(--bkvn-transition), background var(--bkvn-transition);
+}
+
+.radio-wrapper input[type="radio"]:checked + .radio-button {
+  border-color: var(--bkvn-red);
+  background: var(--bkvn-red-subtle);
+  box-shadow: 0 0 10px rgba(217, 38, 38, 0.25);
+}
+
+.radio-wrapper input[type="radio"]:checked + .radio-button::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.radio-wrapper input[type="radio"]:focus-visible + .radio-button {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Standalone Native Fallback Radio */
+input[type="radio"]:not(.radio-wrapper input):not(.radio-segmented-item input):not(.radio-card input) {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: var(--bkvn-bg-elevated);
+  border: 1px solid var(--bkvn-border-strong);
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  transition: background var(--bkvn-transition), border-color var(--bkvn-transition);
+}
+
+input[type="radio"]:not(.radio-wrapper input):not(.radio-segmented-item input):not(.radio-card input):checked {
+  border-color: var(--bkvn-red);
+  background: var(--bkvn-red-subtle);
+}
+
+input[type="radio"]:not(.radio-wrapper input):not(.radio-segmented-item input):not(.radio-card input):checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--bkvn-red);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="radio"]:not(.radio-wrapper input):not(.radio-segmented-item input):not(.radio-card input):focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Disabled State */
+.radio-wrapper.disabled,
+.radio-wrapper input[type="radio"]:disabled + .radio-button,
+input[type="radio"]:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* 2. Segmented Tactical Radio Selector */
+.radio-segmented-group {
+  display: inline-flex;
+  position: relative;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 4px;
+  gap: 4px;
+  flex-wrap: wrap;
+  isolation: isolate;
+}
+
+.radio-segmented-group::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bkvn-border-strong);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+  z-index: -2;
+  transition: background var(--bkvn-transition);
+}
+
+.radio-segmented-group::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bkvn-bg-alt);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 9.45px) 0,
+    100% 9.45px,
+    100% 100%,
+    9.45px 100%,
+    0 calc(100% - 9.45px)
+  );
+  z-index: -1;
+  transition: background var(--bkvn-transition);
+}
+
+.radio-segmented-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.95rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--bkvn-text-muted);
+  cursor: pointer;
+  border-radius: 0;
+  user-select: none;
+  transition: color var(--bkvn-transition);
+  isolation: isolate;
+}
+
+.radio-segmented-item input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.radio-segmented-item:hover {
+  color: var(--bkvn-text-secondary);
+}
+
+.radio-segmented-item:has(input[type="radio"]:checked),
+.radio-segmented-item.active {
+  color: #ffffff;
+}
+
+.radio-segmented-item:has(input[type="radio"]:checked)::before,
+.radio-segmented-item.active::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bkvn-border-strong);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 6px) 0,
+    100% 6px,
+    100% 100%,
+    6px 100%,
+    0 calc(100% - 6px)
+  );
+  z-index: -2;
+}
+
+.radio-segmented-item:has(input[type="radio"]:checked)::after,
+.radio-segmented-item.active::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bkvn-bg-elevated);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 5.45px) 0,
+    100% 5.45px,
+    100% 100%,
+    5.45px 100%,
+    0 calc(100% - 5.45px)
+  );
+  z-index: -1;
+}
+
+.radio-segmented-item input[type="radio"]:focus-visible + span {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* 3. Radio Card Option Kit */
+.radio-card-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.radio-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1.25rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  user-select: none;
+  isolation: isolate;
+  transition: transform var(--bkvn-transition);
+}
+
+.radio-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.radio-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bkvn-border);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 12px) 0,
+    100% 12px,
+    100% 100%,
+    12px 100%,
+    0 calc(100% - 12px)
+  );
+  z-index: -2;
+  transition: background var(--bkvn-transition), box-shadow var(--bkvn-transition);
+}
+
+.radio-card::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bkvn-bg-alt);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 11.45px) 0,
+    100% 11.45px,
+    100% 100%,
+    11.45px 100%,
+    0 calc(100% - 11.45px)
+  );
+  z-index: -1;
+  transition: background var(--bkvn-transition);
+}
+
+.radio-card:hover::before {
+  background: var(--bkvn-border-strong);
+}
+
+.radio-card:hover::after {
+  background: var(--bkvn-bg-elevated);
+}
+
+.radio-card:has(input[type="radio"]:checked)::before,
+.radio-card.active::before {
+  background: var(--bkvn-red);
+  box-shadow: 0 0 15px rgba(217, 38, 38, 0.25);
+}
+
+.radio-card:has(input[type="radio"]:checked)::after,
+.radio-card.active::after {
+  background: var(--bkvn-bg-elevated);
+}
+
+.radio-card-indicator {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  background: var(--bkvn-bg);
+  border: 1px solid var(--bkvn-border-strong);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: border-color var(--bkvn-transition), background var(--bkvn-transition);
+}
+
+.radio-card-indicator::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--bkvn-red);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform var(--bkvn-transition);
+}
+
+.radio-card:has(input[type="radio"]:checked) .radio-card-indicator,
+.radio-card.active .radio-card-indicator {
+  border-color: var(--bkvn-red);
+  background: var(--bkvn-red-subtle);
+}
+
+.radio-card:has(input[type="radio"]:checked) .radio-card-indicator::after,
+.radio-card.active .radio-card-indicator::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.radio-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.radio-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.radio-card-title {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+}
+
+.radio-card-desc {
+  font-size: 0.78125rem;
+  color: var(--bkvn-text-secondary);
+  line-height: 1.4;
+}
+
+/* Range Slider */
+.range-slider {
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #ffffff var(--slider-progress, 78%), var(--bkvn-bg-elevated) var(--slider-progress, 78%));
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.range-slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #000000;
+  box-shadow: 0 0 0 1px #000000;
+  cursor: pointer;
+  transition: transform var(--bkvn-transition);
+}
+
+.range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.range-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #000000;
+  box-shadow: 0 0 0 1px #000000;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: transform var(--bkvn-transition);
+}
+
+.range-slider::-moz-range-thumb:hover {
+  transform: scale(1.15);
+}
+
+.range-slider::-moz-range-progress {
+  background: #ffffff;
+  height: 4px;
+  border-radius: 999px 0 0 999px;
+}
+
+.range-slider::-moz-range-track {
+  background: var(--bkvn-bg-elevated);
+  height: 4px;
+  border-radius: 999px;
+}
+
+/* Badges & Tags */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.55rem;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  border-radius: 2px;
+  background: var(--bkvn-bg-elevated);
+  border: 1px solid var(--bkvn-border);
+  color: var(--bkvn-text-secondary);
+}
+
+.badge-red {
+  color: var(--bkvn-red);
+  background: var(--bkvn-red-subtle);
+  border-color: var(--bkvn-red-border);
+  font-weight: 600;
+}
+
+/* Audio Player (VOID-FM) */
+.player-bar {
+  background: transparent;
+  padding: 1.15rem 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  position: relative;
+  border: none;
+  isolation: isolate;
+}
+
+.player-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bkvn-border-strong);
+  clip-path: polygon(0 12px, 12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+  z-index: -2;
+}
+
+.player-bar::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bkvn-bg-alt);
+  clip-path: polygon(0 11.45px, 11.45px 0, 100% 0, 100% calc(100% - 11.45px), calc(100% - 11.45px) 100%, 0 100%);
+  z-index: -1;
+}
+
+.play-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #050507;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: transform var(--bkvn-transition), background var(--bkvn-transition);
+}
+
+.play-btn:hover {
+  background: #e2e4e8;
+}
+
+/* Frequency Waveform Animation */
+.freq-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 18px;
+}
+
+.freq-bar {
+  width: 3px;
+  background: var(--bkvn-text-secondary);
+  height: 20%;
+  transition: height 0.15s ease;
+}
+
+.freq-bars.active .freq-bar {
+  background: var(--bkvn-red);
+  animation: sound-wave 0.8s infinite alternate ease-in-out;
+}
+
+.freq-bars.active .freq-bar:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.freq-bars.active .freq-bar:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.freq-bars.active .freq-bar:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.freq-bars.active .freq-bar:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.freq-bars.active .freq-bar:nth-child(5) {
+  animation-delay: 0.15s;
+}
+
+@keyframes sound-wave {
+  0% {
+    height: 15%;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+/* Card Panel */
+.bkvn-card {
+  background: transparent;
+  padding: 1.35rem;
+  position: relative;
+  border: none;
+  isolation: isolate;
+}
+
+.bkvn-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bkvn-border-strong);
+  clip-path: polygon(0 12px, 12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+  z-index: -2;
+}
+
+.bkvn-card::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bkvn-bg-alt);
+  clip-path: polygon(0 11.45px, 11.45px 0, 100% 0, 100% calc(100% - 11.45px), calc(100% - 11.45px) 100%, 0 100%);
+  z-index: -1;
+}
+
+/* Modal Dialog */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 5, 7, 0.88);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--bkvn-transition);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box {
+  width: 100%;
+  max-width: 500px;
+  background: transparent;
+  padding: 1.65rem;
+  position: relative;
+  border: none;
+  isolation: isolate;
+}
+
+.modal-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bkvn-border-strong);
+  clip-path: polygon(0 12px, 12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+  z-index: -2;
+}
+
+.modal-box::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bkvn-bg-alt);
+  clip-path: polygon(0 11.45px, 11.45px 0, 100% 0, 100% calc(100% - 11.45px), calc(100% - 11.45px) 100%, 0 100%);
+  z-index: -1;
+}
+
+/* Interactive Type Tester Box Override */
+#live-type-output {
+  position: relative;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  isolation: isolate;
+}
+
+#live-type-output::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bkvn-border-strong);
+  clip-path: polygon(0 12px, 12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+  z-index: -2;
+}
+
+#live-type-output::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bkvn-bg-alt);
+  clip-path: polygon(0 11.45px, 11.45px 0, 100% 0, 100% calc(100% - 11.45px), calc(100% - 11.45px) 100%, 0 100%);
+  z-index: -1;
+}
+
+/* Clean CAD Table */
+.bkvn-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--font-size-sm);
+}
+
+.bkvn-table th {
+  padding: 0.75rem 0.85rem;
+  color: var(--bkvn-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--bkvn-border-strong);
+  background: var(--bkvn-bg-alt);
+}
+
+.bkvn-table td {
+  padding: 0.75rem 0.85rem;
+  border-bottom: 1px solid var(--bkvn-border);
+  color: var(--bkvn-text-secondary);
+}

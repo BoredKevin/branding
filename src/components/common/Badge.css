@@ -1,0 +1,21 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.55rem;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  border-radius: 2px;
+  background: var(--bkvn-bg-elevated);
+  border: 1px solid var(--bkvn-border);
+  color: var(--bkvn-text-secondary);
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  user-select: none;
+}
+
+.badge-red {
+  color: var(--bkvn-red);
+  background: var(--bkvn-red-subtle);
+  border-color: var(--bkvn-red-border);
+  font-weight: 600;
+}

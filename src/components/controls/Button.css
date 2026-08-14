@@ -1,0 +1,244 @@
+/* ==========================================================================
+   UNIFIED SCI-FI HARDWARE BUTTON SYSTEM
+   ========================================================================== */
+
+.btn,
+a.btn,
+button.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  vertical-align: middle;
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+
+  /* Standard baseline: 38px height */
+  height: 38px;
+  padding: 0 1.25rem;
+  --btn-cut: 8px;
+
+  /* Typography */
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  text-align: center;
+  white-space: nowrap;
+
+  /* Asymmetrical Chamfer Polygon Geometry (Top-Right & Bottom-Left) */
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--btn-cut)) 0,
+    100% var(--btn-cut),
+    100% 100%,
+    var(--btn-cut) 100%,
+    0 calc(100% - var(--btn-cut))
+  );
+
+  /* Color Custom Properties Defaults (Secondary Slate Default) */
+  --btn-bg: var(--bkvn-bg-elevated);
+  --btn-border: var(--bkvn-border-strong);
+  --btn-text: var(--bkvn-text-primary);
+
+  background-color: var(--btn-border);
+  color: var(--btn-text) !important;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  isolation: isolate;
+  transition: background-color var(--bkvn-transition),
+              color var(--bkvn-transition),
+              transform var(--bkvn-transition),
+              filter var(--bkvn-transition);
+}
+
+/* Inner Background Surface Layer for 1px Chamfer Frame */
+.btn::after,
+a.btn::after,
+button.btn::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background-color: var(--btn-bg);
+  clip-path: polygon(
+    0 0,
+    calc(100% - calc(var(--btn-cut) - 0.55px)) 0,
+    100% calc(var(--btn-cut) - 0.55px),
+    100% 100%,
+    calc(var(--btn-cut) - 0.55px) 100%,
+    0 calc(100% - calc(var(--btn-cut) - 0.55px))
+  );
+  z-index: -1;
+  transition: background-color var(--bkvn-transition);
+}
+
+/* Base Hover & Active Micro-Interactions */
+.btn:hover,
+a.btn:hover,
+button.btn:hover {
+  --btn-bg: #1c202d;
+  --btn-border: rgba(255, 255, 255, 0.4);
+  --btn-text: #ffffff;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.15));
+}
+
+.btn:active,
+a.btn:active,
+button.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:focus-visible,
+a.btn:focus-visible,
+button.btn:focus-visible {
+  outline: 2px solid var(--bkvn-red);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   COLOR-ONLY VARIANT OVERRIDES
+   -------------------------------------------------------------------------- */
+
+/* Primary Variant: Stark White with High-Contrast Dark Text */
+.btn-primary,
+a.btn-primary,
+button.btn-primary {
+  --btn-bg: #ffffff;
+  --btn-border: #ffffff;
+  --btn-text: #050507;
+  color: #050507 !important;
+}
+
+.btn-primary:hover,
+a.btn-primary:hover,
+button.btn-primary:hover {
+  --btn-bg: #e2e4e8;
+  --btn-border: #e2e4e8;
+  --btn-text: #050507;
+  color: #050507 !important;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.btn-primary:active,
+a.btn-primary:active,
+button.btn-primary:active {
+  --btn-bg: #cbd0d8;
+  --btn-border: #cbd0d8;
+  --btn-text: #050507;
+  color: #050507 !important;
+}
+
+/* Secondary Variant: Dark Slate Hardware Surface */
+.btn-secondary,
+a.btn-secondary,
+button.btn-secondary {
+  --btn-bg: var(--bkvn-bg-elevated);
+  --btn-border: var(--bkvn-border-strong);
+  --btn-text: var(--bkvn-text-primary);
+  color: var(--bkvn-text-primary) !important;
+}
+
+.btn-secondary:hover,
+a.btn-secondary:hover,
+button.btn-secondary:hover {
+  --btn-bg: #1c202d;
+  --btn-border: rgba(255, 255, 255, 0.4);
+  --btn-text: #ffffff;
+  color: #ffffff !important;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.15));
+}
+
+.btn-secondary:active,
+a.btn-secondary:active,
+button.btn-secondary:active {
+  --btn-bg: #141722;
+  --btn-border: rgba(255, 255, 255, 0.5);
+  color: #ffffff !important;
+}
+
+/* Danger Variant: Crimson Red Hardware Tint */
+.btn-danger,
+a.btn-danger,
+button.btn-danger {
+  --btn-bg: var(--bkvn-red-subtle);
+  --btn-border: var(--bkvn-red-border);
+  --btn-text: var(--bkvn-red);
+  color: var(--bkvn-red) !important;
+}
+
+.btn-danger:hover,
+a.btn-danger:hover,
+button.btn-danger:hover {
+  --btn-bg: var(--bkvn-red);
+  --btn-border: var(--bkvn-red);
+  --btn-text: #ffffff;
+  color: #ffffff !important;
+  filter: drop-shadow(0 0 8px rgba(217, 38, 38, 0.4));
+}
+
+.btn-danger:active,
+a.btn-danger:active,
+button.btn-danger:active {
+  --btn-bg: #b81d1d;
+  --btn-border: #b81d1d;
+  --btn-text: #ffffff;
+  color: #ffffff !important;
+}
+
+/* Ghost Variant: Transparent Tactical Fill */
+.btn-ghost,
+a.btn-ghost,
+button.btn-ghost {
+  --btn-bg: transparent;
+  --btn-border: var(--bkvn-border);
+  --btn-text: var(--bkvn-text-secondary);
+  color: var(--bkvn-text-secondary) !important;
+}
+
+.btn-ghost:hover,
+a.btn-ghost:hover,
+button.btn-ghost:hover {
+  --btn-bg: var(--bkvn-bg-elevated);
+  --btn-border: var(--bkvn-border-strong);
+  --btn-text: #ffffff;
+  color: #ffffff !important;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.12));
+}
+
+.btn-ghost:active,
+a.btn-ghost:active,
+button.btn-ghost:active {
+  --btn-bg: #1c202d;
+  color: #ffffff !important;
+}
+
+/* --------------------------------------------------------------------------
+   SIZE MODIFIERS
+   -------------------------------------------------------------------------- */
+
+.btn-sm,
+a.btn-sm,
+button.btn-sm {
+  height: 30px;
+  padding: 0 0.85rem;
+  font-size: var(--font-size-xs);
+  --btn-cut: 6px;
+}
+
+.btn-lg,
+a.btn-lg,
+button.btn-lg {
+  height: 46px;
+  padding: 0 1.65rem;
+  font-size: var(--font-size-base);
+  --btn-cut: 10px;
+}
