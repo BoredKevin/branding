@@ -1,4 +1,4 @@
-import tokensData from '../../public/tokens.json';
+import tokensData from './tokens.json';
 
 export interface DesignTokens {
   name: string;
