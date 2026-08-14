@@ -1,38 +1,40 @@
+// Import Core Styles to bundle into dist/style.css
+import './styles/global.css';
+
 // Tokens & Themes
-export * from './tokens/tokens.ts';
+export * from './tokens/tokens';
 
 // Common Components
-export * from './components/common/ChamferFrame.tsx';
-export * from './components/common/Badge.tsx';
-export * from './components/common/CodePreview.tsx';
+export * from './components/common/ChamferFrame';
+export * from './components/common/Badge';
+export * from './components/common/CodePreview';
 
 // Control Components
-export * from './components/controls/Button.tsx';
-export * from './components/controls/ToggleSwitch.tsx';
-export * from './components/controls/Checkbox.tsx';
-export * from './components/controls/RangeSlider.tsx';
-export * from './components/controls/FormControls.tsx';
+export * from './components/controls/Button';
+export * from './components/controls/ToggleSwitch';
+export * from './components/controls/Checkbox';
+export * from './components/controls/RangeSlider';
+export * from './components/controls/FormControls';
 
 // Radio Kit
-export * from './components/controls/RadioKit/StandardRadio.tsx';
-export * from './components/controls/RadioKit/SegmentedControl.tsx';
-export * from './components/controls/RadioKit/RadioCardGroup.tsx';
+export * from './components/controls/RadioKit/StandardRadio';
+export * from './components/controls/RadioKit/SegmentedControl';
+export * from './components/controls/RadioKit/RadioCardGroup';
 
 // HUD Components
-export * from './components/hud/TopNav.tsx';
-export * from './components/hud/SpecPatch.tsx';
-export * from './components/hud/TelemetryGauge.tsx';
-export * from './components/hud/AudioPlayer.tsx';
-export * from './components/hud/TypeTester.tsx';
-export * from './components/hud/TokensTable.tsx';
+export * from './components/hud/TopNav';
+export * from './components/hud/SpecPatch';
+export * from './components/hud/TelemetryGauge';
+export * from './components/hud/AudioPlayer';
+export * from './components/hud/TypeTester';
+export * from './components/hud/TokensTable';
 
 // Feedback Components
-export * from './components/feedback/Modal.tsx';
+export * from './components/feedback/Modal';
 
 // Custom Hooks
-export * from './hooks/useTelemetryCounter.ts';
-export * from './hooks/useAudioPlayer.ts';
+export * from './hooks/useTelemetryCounter';
+export * from './hooks/useAudioPlayer';
 
 // Showcase Sections
-export * from './showcase/index.ts';
-
+export * from './showcase/index';

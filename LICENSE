@@ -1,0 +1,44 @@
+# Software License (MIT)
+
+Copyright (c) 2026 BoredKevin (BKVN)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+# Fonts & Typography (SIL Open Font License 1.1)
+
+The bundled font software distributed in this repository is licensed under the SIL Open Font License, Version 1.1:
+
+- **Albatross Font Software**:
+  - Copyright (c) 2026 BoredKevin (`public/albatross/OFL.txt`)
+  - Licensed under the SIL Open Font License, Version 1.1.
+- **HS Luna Obscura Font Software**:
+  - Copyright (c) 2026 Headspace Agency (`public/hs_lunaobscura_v1.0/LICENSE.txt`)
+  - Licensed under the SIL Open Font License, Version 1.1.
+
+The SIL OFL allows the fonts to be used, studied, modified, and redistributed freely as long as they are not sold by themselves.
+
+---
+
+# Trademark & Brand Identity Notice
+
+The names **"BoredKevin"**, **"BKVN"**, the tactical hardware brand aesthetic, official monograms, logos, and audio telemetry sound assets are proprietary brand assets and trademarks of BoredKevin. 
+
+This license grants permission to use the component code, tokens, and stylesheets in open-source and commercial software, but does not grant permission to use the BoredKevin trademarks or brand logos for promotional endorsement without prior written consent.
