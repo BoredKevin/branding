@@ -4,14 +4,14 @@
 [![NPM Version](https://img.shields.io/badge/npm-%40boredkevin%2Fbranding-crimson.svg)](https://www.npmjs.com/package/@boredkevin/branding)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-boredkevin%2Fbranding-181717.svg?logo=github)](https://github.com/boredkevin/branding)
 
-`boredkevin/branding` is a package of dark-theme styles, colors, fonts, and React components for building clean, fast web apps.
+`boredkevin/branding` is a package containing dark theme styles, colors, fonts, and React components for building clean, fast web applications.
 
 ---
 
 ## How it works
 
-- **One place for all tokens**: Colors, spacing, and fonts are stored in `tokens.json`. This keeps the CSS and TypeScript types in sync.
-- **Works with any build setup**: Ready to use with modern bundlers (ESM and CommonJS) and comes with full TypeScript types and a plain CSS stylesheet.
+- **Single source of truth for tokens**: Colors, spacing, and fonts are stored in `tokens.json`. This keeps CSS and TypeScript types in sync.
+- **Compatible with various build setups**: Ready to use with modern bundlers (ESM and CommonJS) and includes full TypeScript types and standard CSS stylesheets.
 
 ---
 
@@ -32,7 +32,7 @@ yarn add @boredkevin/branding
 
 ### 1. Import the stylesheet
 
-Add the base stylesheet and token variables near the top of the application entry point (such as `main.tsx` or `App.tsx`):
+Add the base stylesheet and token variables at the top of your application's entry point (e.g., `main.tsx` or `App.tsx`):
 
 ```tsx
 import '@boredkevin/branding/style.css';
@@ -61,7 +61,7 @@ export function StatusCard() {
 
 ### 3. Access design tokens directly
 
-Raw token values (such as hex codes or font stacks) can be accessed programmatically in JavaScript or configuration files:
+Raw token values ​​(such as hex codes or fonts) can be accessed programmatically within JavaScript or configuration files:
 
 ```tsx
 import { BKVN_TOKENS } from '@boredkevin/branding';
@@ -78,7 +78,7 @@ console.log(BKVN_TOKENS.typography.primary);  // Plus Jakarta Sans, sans-serif
 
 ### Colors
 
-The palette uses deep dark backgrounds with crisp text and red accents:
+This palette uses a deep dark background with crisp text and red accents:
 
 | Token | Value | Use case |
 | :--- | :--- | :--- |
@@ -94,16 +94,16 @@ The palette uses deep dark backgrounds with crisp text and red accents:
 ### Fonts
 
 - **Plus Jakarta Sans**: Body text and labels.
-- **JetBrains Mono**: Buttons, code blocks, and data numbers.
-- **Albatross & HS Luna Obscura**: Headers and logo marks.
+- **JetBrains Mono**: Buttons, code blocks, and data figures.
+- **Albatross & HS Luna Obscura**: Headings and logo elements.
 
 ### Components
 
-- **ChamferFrame**: A box container with cut-corner angles.
-- **Button**: A button with different styles (`primary`, `secondary`, `ghost`) that can also work as a link (`as="a"`).
-- **Modal**: A popup dialog that closes with the Escape key or by clicking outside.
+- **ChamferFrame**: A box-shaped container with chamfered corners.
+- **Button**: Buttons with various styles (`primary`, `secondary`, `ghost`) that can also function as links (`as="a"`).
+- **Modal**: A popup dialog that can be closed by pressing the Escape key or clicking outside the modal area.
 - **Form inputs**: Checkboxes, radio buttons, switches, and sliders.
-- **Widgets**: Audio equalizer bars, number counters, and token viewers.
+- **Widgets**: Audio equalizer bars, number counters, and token displays.
 
 ---
 
@@ -143,7 +143,7 @@ npm run test
 
 ## License
 
-- **Code and Components**: MIT License. Free to use and learn from.
-- **Fonts**: Bundled under the SIL Open Font License 1.1.
-- **Brand Identity**: The "BoredKevin" name, logos, and brand marks are proprietary and remain reserved.
+- **Code and Components**: MIT License. Free to use and study.
+- **Fonts**: Included under the SIL Open Font License 1.1.
+- **Brand Identity**: The name "BoredKevin," the logo, and brand elements are exclusive property and are protected.
 
